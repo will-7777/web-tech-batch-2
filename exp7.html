@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>;
+    <script>
+       $(document).ready(function(){
+          $('#btn').click(function(){
+             var c1 = parseInt($('#c1').val());
+             var c2 = parseInt($('#c2').val());
+             var c3 = parseInt($('#c3').val());
+             var c4 = parseInt($('#c4').val());
+             var c5 = parseInt($('#c5').val());
+           
+             var avg = parseInt((c1+c2+c3+c4+c5)/5);
+             
+             if(avg>=95){
+                $('#res2').text("S");
+             }
+             else if(avg>=85&&avg<= 95){
+                $('#res2').text("A");
+             }
+             else if(avg>=75&&avg<= 85){
+                $('#res2').text("B");               
+             }
+             else if(avg>=65&&avg<= 75){
+                $('#res2').text("C");                              
+             }
+             else if(avg>=50&&avg<= 65){
+                $('#res2').text("P");                              
+             }
+             else if(avg<=50){
+                $('#res2').text("F");                              
+             }
+             else{
+                $('#res2').text("No");
+             }
+
+            $('#res1').html(avg);
+
+        });
+       });
+
+    </script>
+    
+</head>
+<body>
+    <div id="heading"style="background-color: yellow; color: white;text-align: center; font-size: 40px; ">My Collage</div>
+    <br>
+    <div style="color:red; text-align: center; font-size: 20px;">Grade Evaluation</div><br>
+    <div style="text-align: center; color: rgb(6, 165, 218);">
+        Student name : <br><input type="text"style="color:red"id="name"><br>
+        Student Reg no : <br><input type="text"style="color:red"id="reg"><br>
+        Course 1 Marks : <br><input type="text"style="color:red"id="c1"><br>
+        Course 2 Marks : <br><input type="text"style="color:red"id="c2"><br>
+        Course 3 Marks : <br><input type="text"style="color:red"id="c3"><br>
+        Course 4 Marks : <br><input type="text"style="color:red"id="c4"><br>
+        Course 5 Marks : <br><input type="text"style="color:red"id="c5"><br><br>
+       <button style ="background-color: blue;color:white"id="btn">Final Grade</button><br><br>
+      
+
+    </div>
+       <div style="background-color:aqua;margin-left: 500px;width:600px;height:10px"></div><br>
+       <div style="text-align:center; color:green;font-size:20px" align="center">Grade Details</div><br>
+    <div>
+         <div style="text-align:center;background-color:green;color:white;margin-left:550px;margin-top:0px;font-size:30px; width: 200px;">Average Marks</div>
+         <div id="res1"style="color:red;margin-left: 850px;margin-top: 0px;font-size: 30px;"></div><br>
+    </div>
+    <div style="margin-top: 0px;">
+          <div style="text-align:center;background-color:green;color:white;margin-left:550px;font-size:30px; width: 200px;">Grade</div>
+          <div id="res2"style="color:red;margin-left: 850px;font-size: 30px;"></div><br>
+
+    </div>
+
+</body>
+</html>
